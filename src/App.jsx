@@ -114,8 +114,9 @@ const App = () => {
         )}
 
         <div className="article-titles">
-          {articles.slice(6).map((article) => (
+          {articles.slice(6).map((article, index) => (
             <Article
+              key={index}
               className="article"
               article={article}
               displayImage={displayImage}

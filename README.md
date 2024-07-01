@@ -20,4 +20,4 @@ Run **npm start** to run the application on localhost:3000.
 
 ## Live Application
 
-The application is running on http://3.27.163.131/.
+The application is running on http://3.27.163.131/. This is an AWS EC2 Nginx server.

@@ -39,6 +39,8 @@ const App = () => {
 
   /**
    * function to remove the prefix C- followed by digits and a slash from the image file name using regex.
+   * @param {Object} data - The data object containing the articles array.
+   * @returns {Object} - A new data object with the articles array where the image filenames have the prefix removed.
    */
   const removePrefixFromImages = (data) => {
     return {

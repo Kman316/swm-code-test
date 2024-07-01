@@ -3,7 +3,7 @@ import "./Article.css";
 
 /**
  * Article component
- * 
+ *
  * className - prop containing className
  * article - prop containing the article
  * displayImage - prop conatining boolean value to display the image

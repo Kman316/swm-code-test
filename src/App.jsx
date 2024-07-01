@@ -28,7 +28,6 @@ const App = () => {
           "https://41hraofw9f.execute-api.ap-southeast-2.amazonaws.com/dev/news",
         );
         const modifiedData = removePrefixFromImages(response.data);
-        console.log(modifiedData);
         setArticles(modifiedData.articles);
       } catch (error) {
         console.error("Error fetching data:", error);

@@ -1,0 +1,42 @@
+.header {
+  display: flex;
+  border-right: 2px solid lightgray;
+  padding-right: 5px;
+  max-height: 45vh;
+}
+
+.header-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-right: 15px;
+  padding: 0.5rem;
+  border-bottom: 1px solid lightgray;
+}
+.title > h1 {
+  font-size: 3rem;
+  font-weight: 400;
+}
+
+@media screen and (max-width: 992px) {
+  .header {
+    display: flex;
+    flex-direction: column-reverse;
+    max-height: 100vh;
+    border-right: none;
+    padding-right: 0px;
+  }
+  .header-content {
+    max-width: 100%;
+    border-bottom: none;
+  }
+  .title > h1 {
+    font-size: 2rem;
+  }
+}
+
+@media screen and (min-width: 992px) and (max-width: 1220px) {
+  .title > h1 {
+    font-size: 2rem;
+  }
+}

@@ -51,78 +51,40 @@ const App = () => {
     };
   };
 
+  const renderArticle = (article, index, className, displayImage, displayTeaser, displayByline) => (
+    <Article
+      key={index}
+      className={className}
+      article={article}
+      displayImage={displayImage}
+      displayTeaser={displayTeaser}
+      displayByline={displayByline}
+    />
+  );
+
   return (
     <div className="news">
       <div className="news-left">
         {articles[0] && <Header article={articles[0]} />}
         <div className="articles">
           <div className="article-long">
-            {articles[5] && (
-              <Article
-                className="article"
-                article={articles[5]}
-                displayImage={() => setDisplayImage(true)}
-                displayTeaser={() => setDisplayTeaser(true)}
-                displayByline={() => setDisplayByline(false)}
-              />
-            )}
+            {articles[5] && renderArticle(articles[5], 5, "article", () => setDisplayImage(true), () => setDisplayTeaser(true), () => setDisplayByline(true))}
           </div>
           <div className="article-short">
-            {articles[2] && (
-              <Article
-                className="article-short-top"
-                article={articles[2]}
-                displayImage={displayImage}
-                displayTeaser={() => setDisplayTeaser(true)}
-                displayByline={() => setDisplayByline(false)}
-              />
-            )}
-
-            {articles[3] && (
-              <Article
-                className="article-short-bottom"
-                article={articles[3]}
-                displayImage={displayImage}
-                displayTeaser={() => setDisplayTeaser(true)}
-                displayByline={() => setDisplayByline(false)}
-              />
-            )}
+            {articles[2] && renderArticle(articles[2], 2, "article-short-top", displayImage, () => setDisplayTeaser(true), () => setDisplayByline(true))}
+            {articles[3] && renderArticle(articles[3], 3, "article-short-bottom", displayImage, () => setDisplayTeaser(true), () => setDisplayByline(true))}
           </div>
           <div className="article-long">
-            {articles[4] && (
-              <Article
-                className="article"
-                article={articles[4]}
-                displayImage={() => setDisplayImage(true)}
-                displayTeaser={() => setDisplayTeaser(true)}
-                displayByline={() => setDisplayByline(false)}
-              />
-            )}
+            {articles[4] && renderArticle(articles[4], 4, "article", () => setDisplayImage(true), () => setDisplayTeaser(true), () => setDisplayByline(true))}
           </div>
         </div>
       </div>
       <div className="news-right">
-        {articles[1] && (
-          <Article
-            className="article"
-            article={articles[1]}
-            displayImage={() => setDisplayImage(true)}
-            displayTeaser={displayTeaser}
-            displayByline={() => setDisplayByline(false)}
-          />
-        )}
-
+        {articles[1] && renderArticle(articles[1], 1, "article", () => setDisplayImage(true), displayTeaser, () => setDisplayByline(true))}
         <div className="article-titles">
-          {articles.slice(6).map((article, index) => (
-            <Article
-              key={index}
-              className="article"
-              article={article}
-              displayImage={displayImage}
-              displayTeaser={displayTeaser}
-              displayByline={displayByline}
-            />
-          ))}
+          {articles.slice(6).map((article, index) =>
+            renderArticle(article, index + 6, "article", displayImage, displayTeaser, displayByline)
+          )}
         </div>
       </div>
     </div>
